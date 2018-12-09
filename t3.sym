@@ -1,11 +1,14 @@
 //Symbol Name		Page Address
 //----------------	------------
-//	Aasciicomp              400A
-//	Buffer                  4009
-//	Gasciicomp              400C
-//	KBSR                    4008
-//	Uasciicomp              400B
-//	isrstart                4006
-//	ivt                     4007
-//	pipe                    400D
-//	stackinitial            4005
+//	Aasciicomp              4013
+//	Buffer                  4012
+//	Gasciicomp              4015
+//	KBSR                    4011
+//	Uasciicomp              4014
+//	isrstart                400F
+//	ivt                     4010
+//	loop                    4009
+//	pipe                    4016
+//	stackinitial            400E
+//	startover               4007
+//	stopover                4008
