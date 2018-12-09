@@ -32,6 +32,31 @@ loop	LDI  R0, Buffer
 	AND  R1, R1, #0
 	STI  R1, Buffer		;you have input in R0 still, but #0 is put back in x4600
 
+	ADD R4, R3, #-1
+	BRz checkstart2 
+
+	ADD R4, R3, #-2
+	BRz checkstart3
+
+	ADD R4,R5,#-3
+	BRz checkstop1
+
+	ADD R4,R5,#-4
+	BRz checkstop2
+	
+	ADD R4,R5,#-5
+	BRz checkstop3
+
+	ADD R4,R5,#-6
+	BRz checkstoplast
+
+
+	LD   R2, Aasciicomp
+	ADD  R2, R2, R0
+	BRnp loop
+	ADD  R3, R3, #1
+	BRnzp loop
+	
 
 
 stackinitial	.FILL	x4000
