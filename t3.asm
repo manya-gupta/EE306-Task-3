@@ -18,8 +18,19 @@
 
 	LD   R0, stackinitial	;r0=x4000
 	STI  R0, KBSR		;puts x4000 in KBSR (sets interrupt bit (14th bit) to 1)
-;loop	BRnzp loop
+; start of actual program
 
+	AND  R1, R1, #0
+	STI  R1, Buffer
+
+startover	AND  R3, R3, #0
+stopover	ADD  R5, R3, #0
+
+loop	LDI  R0, Buffer
+	BRz  loop
+	TRAP x21
+	AND  R1, R1, #0
+	STI  R1, Buffer		;you have input in R0 still, but #0 is put back in x4600
 
 
 
